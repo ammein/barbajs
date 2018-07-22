@@ -35,6 +35,6 @@ And if you have problem on MIME Type like `text/html` kind of problems , just do
 <!-- For Javascript , use text/javascript -->
 <script src="../assets/js/index.js" type="text/javascript"></script>
 
-<!-- For CSS , use rel="stylesheet" -->
-<link rel="stylesheet" src="./path/to/css/files">
+<!-- For CSS , use rel="stylesheet" AND type="text/css" -->
+<link rel="stylesheet" type="text/css" src="./path/to/css/files">
 ```
