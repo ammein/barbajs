@@ -29,3 +29,12 @@ res.sendFile('index.html' , {
     root : 'path/to/file'
 })
 ```
+
+And if you have problem on MIME Type like `text/html` kind of problems , just do this in your html :
+```html
+<!-- For Javascript , use text/javascript -->
+<script src="../assets/js/index.js" type="text/javascript"></script>
+
+<!-- For CSS , use rel="stylesheet" -->
+<link rel="stylesheet" src="./path/to/css/files">
+```
