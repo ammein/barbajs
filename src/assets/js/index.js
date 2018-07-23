@@ -2,7 +2,10 @@
 /// <reference path="../js/TimelineMax.js"/>
 /// <reference path="../js/jquery.gsap.js"/>
 function deleteLink(){
-    return $("a").css('display','none');
+    return $("a").css({
+        display : 'none',
+        transition : 2
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -27,17 +30,18 @@ document.addEventListener("DOMContentLoaded", function () {
             var anotherDiv = $(div).clone();
             $(anotherDiv).appendTo('body').addClass('append-body');
             TweenMax.to(div,2,{
-                width : $(window).width()/2
-                // x : 0
+                width : $(window).width()/2,
+                x : 0
             });
-            TweenMax.to(anotherDiv,2,{
+            TweenMax.from(anotherDiv,2,{
                 width : $(window).width()/2,
                 x : $(window).width()
             });
             TweenMax.to(image , 1.5,{
-                width : $(window).width(),
-                height : $(window).height(),
-                easing: Linear.easeNone, 
+                width : $(window).width()/2,
+                height : $(window).height()/2,
+                top : $(window).scrollTop(),
+                ease: Linear.easeNone, 
                 onUpdate: deleteLink
             });
             return oldContainer.css({zIndex : 9999999 , position : 'absolute'}).promise();
